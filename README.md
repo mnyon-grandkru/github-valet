@@ -63,7 +63,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSEg) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details
 
 ## Acknowledgments
 
