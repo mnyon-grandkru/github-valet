@@ -15,7 +15,6 @@ Ruby 2.4.0
 
 
 Give examples
-```
 
 ### Installing
 
