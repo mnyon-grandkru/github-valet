@@ -1,7 +1,8 @@
-require "bundler/setup"
-require "repository_observer"
 require 'coveralls'
 Coveralls.wear!
+require "bundler/setup"
+require "repository_observer"
+
 
 
 RSpec.configure do |config|
