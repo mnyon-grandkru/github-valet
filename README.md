@@ -47,7 +47,7 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Ruby](http:/ruby-lang.org/) - The language used
-* [RSpec]](https://relishapp.com/rspec) - RSpec
+* [RSpec](https://relishapp.com/rspec) - RSpec
 
 ## Contributing
 
