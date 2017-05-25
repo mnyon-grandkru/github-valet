@@ -1,7 +1,7 @@
 
-# Repository Observer
+# Github Valet
 
-[![Coverage Status](https://coveralls.io/repos/github/trystant/respository-observer/badge.svg?branch=master)](https://coveralls.io/github/trystant/respository-observer?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/trystant/github-valet/badge.svg?branch=master)](https://coveralls.io/github/trystant/respository-observer?branch=master)
 
 This goal of this project is to build a robot that can analyze Github 
 repositories and report if any of the conditions outlined below are 
