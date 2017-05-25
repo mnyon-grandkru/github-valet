@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'repository_observer/version'
+require 'github_valet/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "repository_observer"
-  spec.version       = RepositoryObserver::VERSION
+  spec.name          = "github_valet"
+  spec.version       = GithubValet::VERSION
   spec.authors       = ["Mark Nyon"]
   spec.email         = ["mark@grandkru.com"]
 
   spec.summary       = %q{A Github repo scanner}
   spec.description   = %q{This project scans a user''s Github repos & reports }
-  spec.homepage      = "https://trystant.github.io/repository_observer"
+  spec.homepage      = "https://trystant.github.io/github_valet"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

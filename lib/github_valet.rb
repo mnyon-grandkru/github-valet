@@ -1,5 +1,5 @@
-module RepositoryObserver
-  require 'repository_observer/version'
+module GithubValet
+  require 'github_valet/version'
   require 'octokit'
   
   def self.readme_md_exists_for?(repository) 

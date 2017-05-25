@@ -11,6 +11,7 @@ not met.
 
 
 
+
 ### Prerequisites
 
 Ruby 2.4.0
@@ -69,6 +70,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc

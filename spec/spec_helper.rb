@@ -1,7 +1,7 @@
 require 'coveralls'
 Coveralls.wear!
 require "bundler/setup"
-require "repository_observer"
+require "github_valet"
 
 
 
