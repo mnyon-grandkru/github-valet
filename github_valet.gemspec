@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "octokit"
+  spec.add_dependency "netrc"
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"
@@ -39,7 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "pry-remote"
-  spec.add_development_dependency "pry-nav"
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "coveralls"
 end
