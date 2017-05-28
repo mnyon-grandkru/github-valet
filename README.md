@@ -11,7 +11,11 @@ README.md files.
 
 ## Getting Started
 
-
+To determine whether a Github repo has a README.md, run the following:
+```
+> GithubValet.readme_md_exists_for?(repo_string)
+```
+A repository with a README returns true, a repository without returns false.
 
 
 ### Prerequisites
@@ -23,25 +27,36 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+Here's how to currently download and install
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Clone the repository from github:
 
 ```
-until finished
+> git clone git@github.com:trystant/github-valet.git
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Install supporting libraries with `bundler`
+
+```
+> bundle install
+```
+Use `bundle exec pry` to open a console
+
+```
+> bundle exec pry
+```
+
+Run `GithubValet` commands:
+
+```
+[1] pry(main)> GithubValet.readme_md_exists_for?('BOWiki/BOW')
+=> true
+```
 
 ## Running the tests
 
-The automated tests for this project are run by using the command `rake`.
+Github-valet uses [RSpec](https://relishapp.com/rspec) for automated tests.
+The tests are run by using the command `rake`.
 
 ## Deployment
 
@@ -51,24 +66,30 @@ Add additional notes about how to deploy this on a live system
 
 * [Ruby](http:/ruby-lang.org/) - The language used
 * [RSpec](https://relishapp.com/rspec) - RSpec
+* [Octokit](https://github.com/octokit/octokit.rb) - Octokit
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) 
+for details on our code of conduct, and the process for submitting pull 
+requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, 
+see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
 * **Mark Nyon** - *Initial work* - [Github Profile](https://github.com/trystant)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/your/project/contributors)
+who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) 
+file for details
 
 ## Acknowledgments
 
