@@ -47,5 +47,36 @@ describe GithubValet do
       end
     end
   end
+  
+   describe '.find_user_repos_without_readme' do
+    describe 'on success' do
+      it 'returns number of user repos checked & those without README.md files' do
+    
+        repos_mock = [
+          {
+            qname: 'unicorn_startup',
+            owner: {
+              login: 'superdev'
+            }
+          },
+           {
+            name: 'enterprise_company_project',
+            owner: {
+              login: 'superdev'
+            }
+          }
+        ]
+        
+        client_mock = {
+          repositories: repos_mock  
+        }
+        expect(Octokit::Client).to receive(:new).and_return(client_mock)
+        expect(client_mock).to receive(:repositories).and_return(repos_mock)
+        expect(GithubValet).to receive(:readme_md_exists_for_user_repo?).once.and_return(true)
+        expect(GithubValet).to receive(:readme_md_exists_for_user_repo?).once.and_return(false)
+        expect(GithubValet.find_user_repos_without_readme).to match("superdev/enterprise_company_project has no README.md")
+      end
+    end
+  end
 end
 
