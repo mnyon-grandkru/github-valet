@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{This project scans a user''s Github repos & reports }
   spec.homepage      = "https://trystant.github.io/github_valet"
   spec.license       = "MIT"
-  spec.required_ruby_version = '2.5.0'
+  spec.required_ruby_version = '~> 2.5'
 
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

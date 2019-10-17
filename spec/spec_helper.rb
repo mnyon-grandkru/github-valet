@@ -1,6 +1,7 @@
 require 'coveralls'
 Coveralls.wear!
 require "bundler/setup"
+require 'pry-byebug'
 require "github_valet"
 
 

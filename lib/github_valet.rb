@@ -1,4 +1,4 @@
-module GithubValet
+class GithubValet
   require 'dotenv/load'
   require 'github_valet/version'
   require 'octokit'
@@ -11,6 +11,7 @@ module GithubValet
     @client ||= Octokit::Client.new
     @logger ||= Logger.new('github_valet.log')
   end
+
   def readme_md_exists_for?(repository)
     Octokit.readme(repository, access_token: ENV['OCTOKIT_TEST_GITHUB_TOKEN']).is_a?(Sawyer::Resource)
   rescue StandardError => error
@@ -38,14 +39,14 @@ module GithubValet
       "#{repo[:owner][:login]}/#{repo[:name]}"
     }.each do |repo_string|
       unless self.readme_md_exists_for?(repo_string)
-       p "#{repo_string} has no README.md\n"
+       @logger.warn  "#{repo_string} has no README.md\n"
        results += "#{repo_string} has no README.md"
       end
     end
     results
   end
 
-  def self.find_user_repos_without_readme
+  def find_user_repos_without_readme
     @client = Octokit::Client.new(
       access_token: ENV['OCTOKIT_TEST_GITHUB_TOKEN']
     )
@@ -55,7 +56,7 @@ module GithubValet
       "#{repo[:owner][:login]}/#{repo[:name]}"
     }.each do |repo_string|
       unless self.readme_md_exists_for_user_repo?(repo_string)
-       p "#{repo_string} has no README.md"
+       @logger.warn  "#{repo_string} has no README.md"
        results += "#{repo_string} has no README.md"
       end
     end

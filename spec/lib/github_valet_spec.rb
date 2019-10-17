@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe GithubValet do
+
   describe '#readme_md_exists_for?(repository)' do
     describe 'on success' do
       it 'returns true if the Github repository has a README file' do
@@ -39,10 +40,10 @@ describe GithubValet do
         client_mock = {
           repositories: repos_mock
         }
-        expect(Octokit::Client).to receive(:new).and_return(client_mock)
+        expect(Octokit::Client).to receive(:new).at_least(2).times.and_return(client_mock)
         expect(client_mock).to receive(:repositories).and_return(repos_mock)
-        expect(GithubValet).to receive(:readme_md_exists_for?).once.and_return(true)
-        expect(GithubValet).to receive(:readme_md_exists_for?).once.and_return(false)
+        expect(subject).to receive(:readme_md_exists_for?).once.and_return(true)
+        expect(subject).to receive(:readme_md_exists_for?).once.and_return(false)
         expect(subject.find_repos_without_readme).to match("superdev/enterprise_company_project has no README.md")
       end
     end
@@ -70,10 +71,10 @@ describe GithubValet do
         client_mock = {
           repositories: repos_mock
         }
-        expect(Octokit::Client).to receive(:new).and_return(client_mock)
+        expect(Octokit::Client).to receive(:new).at_least(2).times.and_return(client_mock)
         expect(client_mock).to receive(:repositories).and_return(repos_mock)
-        expect(GithubValet).to receive(:readme_md_exists_for_user_repo?).once.and_return(true)
-        expect(GithubValet).to receive(:readme_md_exists_for_user_repo?).once.and_return(false)
+        expect(subject).to receive(:readme_md_exists_for_user_repo?).once.and_return(true)
+        expect(subject).to receive(:readme_md_exists_for_user_repo?).once.and_return(false)
         expect(subject.find_user_repos_without_readme).to match("superdev/enterprise_company_project has no README.md")
       end
     end
