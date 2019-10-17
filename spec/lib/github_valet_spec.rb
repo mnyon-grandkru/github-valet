@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe GithubValet do
-
   describe '#readme_md_exists_for?(repository)' do
     describe 'on success' do
       it 'returns true if the Github repository has a README file' do
-        github_repo_url = "trystant/github-valet"
+        github_repo_url = 'trystant/github-valet'
         expect(subject.readme_md_exists_for?(github_repo_url)).to be_truthy
       end
     end
@@ -21,7 +22,6 @@ describe GithubValet do
   describe '#find_repos_without_readme' do
     describe 'on success' do
       it 'returns number of repos checked & those without README.md files' do
-
         repos_mock = [
           {
             qname: 'unicorn_startup',
@@ -29,7 +29,7 @@ describe GithubValet do
               login: 'superdev'
             }
           },
-           {
+          {
             name: 'enterprise_company_project',
             owner: {
               login: 'superdev'
@@ -44,15 +44,14 @@ describe GithubValet do
         expect(client_mock).to receive(:repositories).and_return(repos_mock)
         expect(subject).to receive(:readme_md_exists_for?).once.and_return(true)
         expect(subject).to receive(:readme_md_exists_for?).once.and_return(false)
-        expect(subject.find_repos_without_readme).to match("superdev/enterprise_company_project has no README.md")
+        expect(subject.find_repos_without_readme).to match('superdev/enterprise_company_project has no README.md')
       end
     end
   end
 
-   describe '#find_user_repos_without_readme' do
+  describe '#find_user_repos_without_readme' do
     describe 'on success' do
       it 'returns number of user repos checked & those without README.md files' do
-
         repos_mock = [
           {
             qname: 'unicorn_startup',
@@ -60,7 +59,7 @@ describe GithubValet do
               login: 'superdev'
             }
           },
-           {
+          {
             name: 'enterprise_company_project',
             owner: {
               login: 'superdev'
@@ -75,9 +74,8 @@ describe GithubValet do
         expect(client_mock).to receive(:repositories).and_return(repos_mock)
         expect(subject).to receive(:readme_md_exists_for_user_repo?).once.and_return(true)
         expect(subject).to receive(:readme_md_exists_for_user_repo?).once.and_return(false)
-        expect(subject.find_user_repos_without_readme).to match("superdev/enterprise_company_project has no README.md")
+        expect(subject.find_user_repos_without_readme).to match('superdev/enterprise_company_project has no README.md')
       end
     end
   end
 end
-
