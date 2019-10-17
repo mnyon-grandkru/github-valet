@@ -13,15 +13,15 @@ README.md files.
 
 To determine whether a Github repo has a README.md, run the following:
 ```
-> GithubValet.readme_md_exists_for?(repo_string)
+> github_valet = GithubValet.new
+> github_valet.readme_md_exists_for?(repo_string)
 ```
 A repository with a README returns true, a repository without returns false.
 
 
 ### Prerequisites
 
-Ruby 2.4.0
-
+Ruby 2.5.0
 
 Give examples
 
@@ -49,7 +49,7 @@ Use `bundle exec pry` to open a console
 Run `GithubValet` commands:
 
 ```
-[1] pry(main)> GithubValet.readme_md_exists_for?('BOWiki/BOW')
+[1] pry(main)> github_valet.readme_md_exists_for?('BOWiki/BOW')
 => true
 ```
 
