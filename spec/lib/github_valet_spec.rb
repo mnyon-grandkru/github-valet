@@ -81,8 +81,7 @@ describe GithubValet do
 
   describe '#sync_local_branch' do
     describe 'on success' do
-      it 'updates a local github branch with the latest origin remote branch' do
-      end
+      it 'updates a local github branch with the latest origin remote branch'
     end
   end
 end
